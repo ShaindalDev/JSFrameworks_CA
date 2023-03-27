@@ -1,21 +1,24 @@
 import styled from "styled-components";
 
-export const StyledProductCard = styled.div`
+export const StyledProdCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: ${({ theme }) =>
-    `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+    `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
   width: 30rem;
   padding: 1rem;
   border-radius: 15px;
+  box-shadow: 15px 8px 17px ${({ theme }) => theme.color.dropShadow};
   background-color: ${({ theme }) =>
     `${theme.color.productCardBg}`};
 
   img {
     max-width: 100%;
-    align-self: center;
+    height: 20rem;
+    
     border-radius: 15px;
+    object-fit: cover;
     
   }
 
@@ -40,7 +43,7 @@ export const StyledProductCard = styled.div`
   }
 
   .discount {
-    background-color: red;
+    background-color: ${({ theme }) => theme.color.discountBgColor};
     color: ${({ theme }) => theme.color.neutral};
     padding: 0.3rem;
     border-radius: 4px;
@@ -58,6 +61,7 @@ export const StyledProductCard = styled.div`
     border-radius: 6px;
     &:hover {
       opacity: 0.9;
+      color: ${({ theme }) => theme.color.neutral};
     }
   }
 
@@ -76,6 +80,7 @@ export const StyledProductCard = styled.div`
   `}
 
   //reset flex-direction and img size on small screens
+
   @media (max-width: ${({ theme }) => theme.break.small}) {
     flex-direction: column;
 

@@ -3,7 +3,7 @@ import { StyledPage } from "../pageStyles";
 import ProductCard from "../../components/ProductCard";
 import ProductReviews from "../../components/ProductReviews";
 import { useParams } from "react-router-dom";
-import { url } from "../../utils/contants";
+import { API_URL } from "../../utils/constants";
 
 export default function Product() {
   const [data, setData] = useState(null);
@@ -17,7 +17,7 @@ export default function Product() {
         setIsLoading(true);
         setIsError(false);
 
-        const response = await fetch(url + id);
+        const response = await fetch(API_URL + id);
         const data = await response.json();
 
         //set document title including product name

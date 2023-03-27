@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyledSearchBar } from "./styles";
 import { Link, useLocation } from "react-router-dom";
-import { url } from "../../../utils/contants";
+import { API_URL } from "../../../utils/constants";
 
 export default function SearchBar() {
   const [data, setData] = useState([]);
@@ -15,7 +15,7 @@ export default function SearchBar() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(url);
+        const response = await fetch(API_URL);
         const json = await response.json();
 
         setData(json);
@@ -25,7 +25,7 @@ export default function SearchBar() {
     }
 
     fetchData();
-    console.log("Component loaded");
+    
 
     //remove options from searchbar
     setSuggestions([]);

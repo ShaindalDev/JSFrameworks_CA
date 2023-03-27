@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyledPage } from "../pageStyles";
 import ProductCard from "../../components/ProductCard";
-import { url } from "../../utils/contants";
+import { API_URL } from "../../utils/constants";
 
 export default function Perfumes() {
   const [products, setProducts] = useState([]);
@@ -11,7 +11,7 @@ export default function Perfumes() {
 
     async function fetchProducts() {
       try {
-        const response = await fetch(url);
+        const response = await fetch(API_URL);
         const data = await response.json();
 
         setProducts(data);

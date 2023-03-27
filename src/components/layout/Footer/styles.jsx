@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
+background: ${({ theme }) => theme.color.headerGradient};
   border-top: ${({ theme }) =>
-    `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+    `${theme.border.thicknessDivider} ${theme.border.type} ${theme.color.dividerColorLeft}`};
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 
   ul {
     display: flex;
@@ -14,6 +15,6 @@ export const StyledFooter = styled.footer`
   }
 
   a {
-    color: ${({ theme }) => theme.color.highlight};
+    color: ${({ theme }) => theme.color.neutral};
   }
 `;

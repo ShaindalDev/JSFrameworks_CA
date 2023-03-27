@@ -1,5 +1,5 @@
 import { StyledContactForm } from "./styles";
-import PrimaryButton from "../PrimaryButton";
+import ContactCTAButton from "../ContactCTA";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -93,7 +93,7 @@ export default function ContactForm() {
         <p className="error-message">{errors.body?.message}</p>
 
         <div className="button-container">
-          <PrimaryButton text={"Submit"} />
+          <ContactCTAButton text={"Submit"} />
         </div>
       </fieldset>
     </StyledContactForm>

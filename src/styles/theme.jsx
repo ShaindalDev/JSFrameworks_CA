@@ -11,7 +11,20 @@ const smooth = {
     buttonText: "#030404",
     buttonBackground: "#d8d8d8",
     productCardBg: "#43474c",
-
+    discountBgColor: "#B10000",
+    dividerColorRight: "linear-gradient(to right, rgba(226,227,228,1), rgba(172,182,200,1))",
+    dividerColorLeft: "linear-gradient(to left, rgba(226,227,228,1), rgba(172,182,200,1))",
+    //Button color and gradients
+    contactCTA: "linear-gradient(to top, rgba(29,44,73,1), rgba(173,186,209,1))",
+    primaryCTA: "green",
+    secondButtonBG: "red",
+    dropShadow: "#000",
+    gradientActive2: "rgba(37,117,252,0.5)",
+    gradientHover: "linear-gradient(to left, rgba(48,207,208,0.4), rgba(51,8,103,0.4))",
+    //Body, Header and Footer background gradient
+    bodyGradient: "linear-gradient(to left, rgba(106,133,182,1), rgba(186,200,224,1))",
+    headerGradient: "linear-gradient(to right, rgba(106,133,182,0.5), rgba(186,200,224,0.7))"
+    
 
   },
   break: {
@@ -20,6 +33,7 @@ const smooth = {
   },
   border: {
     thickness: "1px",
+    thicknessDivider: "3px",
     type: "solid",
     borderRadius: 3,
   },

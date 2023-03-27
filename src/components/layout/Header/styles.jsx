@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   display: grid;
-  background-color: ${({ theme }) =>
-    `${theme.color.productCardBg}`}; 
+  background: ${({ theme }) => theme.color.headerGradient};
   grid-template-columns: 2fr 1fr 4rem;
-  padding: 1rem;
-  border: ${({ theme }) =>
-    `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+  padding: 4rem;
+  border-bottom: ${({ theme }) =>
+    `${theme.border.thicknessDivider} ${theme.border.type} ${theme.color.dividerColorRight}`};
 
   img {
     padding-bottom: 1rem;
@@ -23,7 +22,7 @@ export const StyledHeader = styled.header`
   }
 
   .cart-wrapper {
-    color: ${({ theme }) => theme.color.highlight};
+    color: ${({ theme }) => theme.color.neutral};
     text-decoration: none;
     position: relative;
   }

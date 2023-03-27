@@ -15,9 +15,9 @@ box-sizing: border-box;
 
 body {
     margin: 0;
-    font-family: 'Figtree', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: ${({ theme }) => theme.color.neutral};
-    background-color: ${({ theme }) => theme.color.darkBgBody};
+    background: ${({ theme }) => theme.color.bodyGradient};
 }
 
 ul {

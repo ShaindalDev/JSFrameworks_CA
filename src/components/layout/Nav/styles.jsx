@@ -9,7 +9,7 @@ export const StyledNavBar = styled.nav`
 
   ul {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
   }
 
   li {
@@ -18,8 +18,9 @@ export const StyledNavBar = styled.nav`
     transition: 0.5s;
 
     &:hover {
-      background-color: ${({ theme }) => theme.color.highlight};
+      background: ${({ theme }) => theme.color.gradientHover};
       cursor: pointer;
+      border-radius: 4px;
 
       a {
         color: ${({ theme }) => theme.color.buttonText};
@@ -30,13 +31,14 @@ export const StyledNavBar = styled.nav`
       display: block;
       padding: 0.5rem 1.5rem;
       text-decoration: none;
-      color: ${({ theme }) => theme.color.highlight};
+      color: ${({ theme }) => theme.color.neutral};
     }
   }
 
   .active {
-    background-color: ${({ theme }) => theme.color.buttonBackground};
+    background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5));
     color: ${({ theme }) => theme.color.buttonText};
+    border-radius: 4px;
   }
 
   @media (max-width: ${({ theme }) => theme.break.medium}) {
