@@ -15,7 +15,7 @@ const smooth = {
     dividerColorRight: "linear-gradient(to right, rgba(226,227,228,1), rgba(172,182,200,1))",
     dividerColorLeft: "linear-gradient(to left, rgba(226,227,228,1), rgba(172,182,200,1))",
     //Button color and gradients
-    contactCTA: "linear-gradient(to top, rgba(29,44,73,1), rgba(173,186,209,1))",
+    contactCTA: "linear-gradient(to top, rgba(0,102,2,1), rgba(102,240,10,1))",
     primaryCTA: "green",
     secondButtonBG: "red",
     dropShadow: "#000",

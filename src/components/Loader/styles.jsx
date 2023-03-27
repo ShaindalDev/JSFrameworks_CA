@@ -38,4 +38,8 @@ export const LoaderStyle = styled.div`
       transform: translate(0px , 0px) rotate(-45deg)
     }
   }
+  .loaderInfo {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
 `;
