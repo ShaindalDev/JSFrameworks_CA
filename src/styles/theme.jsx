@@ -23,7 +23,9 @@ const smooth = {
     gradientHover: "linear-gradient(to left, rgba(48,207,208,0.4), rgba(51,8,103,0.4))",
     //Body, Header and Footer background gradient
     bodyGradient: "linear-gradient(to left, rgba(106,133,182,1), rgba(186,200,224,1))",
-    headerGradient: "linear-gradient(to right, rgba(106,133,182,0.5), rgba(186,200,224,0.7))"
+    headerGradient: "linear-gradient(to right, rgba(106,133,182,0.5), rgba(186,200,224,0.7))",
+    // Product rating and review styling
+    borderGradientFade: "linear-gradient(to right, rgba(102,126,234,0.85), rgba(118,75,162,0.85))", //can't get it to work as i want, future issue
     
 
   },
@@ -34,6 +36,7 @@ const smooth = {
   border: {
     thickness: "1px",
     thicknessDivider: "3px",
+    thicknessThick: "5px",
     type: "solid",
     borderRadius: 3,
   },

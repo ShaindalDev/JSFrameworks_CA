@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const StyledCheckoutSum = styled.div`
 border: ${({ theme }) =>
-    `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+    `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
   height: fit-content;
-  flex: 0 0 30%;
+  flex: 0 0 25%;
   border-radius: 6px;
   h3 {
     margin: 0 0 1rem;
@@ -37,5 +37,5 @@ border: ${({ theme }) =>
     }
   }
   @media (max-width: ${({ theme }) => theme.break.medium}) {
-    flex: 0 0 100%;
+    flex: 0 0 75%;
   }`;

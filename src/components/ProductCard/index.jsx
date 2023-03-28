@@ -25,7 +25,7 @@ export default function ProductCard({
     shallow
   );
 
-  //modal dialog
+  //PopUp modal
   const { isVisible, show } = usePopUpStore(
     (state) => ({
       isVisible: state.isVisible,

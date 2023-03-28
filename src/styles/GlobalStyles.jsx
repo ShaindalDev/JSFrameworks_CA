@@ -18,6 +18,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: ${({ theme }) => theme.color.neutral};
     background: ${({ theme }) => theme.color.bodyGradient};
+    
 }
 
 ul {

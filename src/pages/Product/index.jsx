@@ -44,7 +44,7 @@ export default function Product() {
 
   return (
     <StyledPage>
-      <h1>{data.title}</h1>
+      <h1 align="center">{data.title}</h1>
       <ProductCard
         imageUrl={data.imageUrl}
         title={data.title}

@@ -28,7 +28,7 @@ export default function CheckoutSum({
                 <p className='total'>Total</p>
                 <p className='total'>{calcTotal()} USD</p>
             </div>
-            <Link to={"/success"}>Place Order</Link>
+            <Link to={"/success"} onClick={() => clearCart()}>Place Order</Link>
             <SecondButton onClick={() => clearCart()} text={'Empty Cart'} />
         </StyledCheckoutSum>
     );

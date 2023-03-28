@@ -6,7 +6,7 @@ export const StyledProdCard = styled.div`
   justify-content: space-between;
   border: ${({ theme }) =>
     `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
-  width: 30rem;
+  max-width: 25rem;
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 15px 8px 17px ${({ theme }) => theme.color.dropShadow};
@@ -14,14 +14,13 @@ export const StyledProdCard = styled.div`
     `${theme.color.productCardBg}`};
 
   img {
-    max-width: 100%;
-    height: 20rem;
-    
+    width: 100%;
+    height: 35rem;
     border-radius: 15px;
     object-fit: cover;
     
   }
-
+  
   .items-data {
     display: flex;
     flex-direction: column;
