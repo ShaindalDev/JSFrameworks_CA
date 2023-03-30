@@ -3,10 +3,10 @@ import { shallow } from "zustand/shallow";
 import { StyledItemsInCart } from "./styles";
 
 export default function CartItem({ title, count, discountedPrice, price, id, imageUrl }) {
-  const { addOne, subtractOne, clearCount } = useProductsStore(
+  const { addCounter, subtractCounter, clearCount } = useProductsStore(
     (state) => ({
-      addOne: state.addOne,
-      subtractOne: state.subtractOne,
+      addCounter: state.addCounter,
+      subtractCounter: state.subtractCounter,
       clearCount: state.clearCount,
     }),
     shallow
@@ -24,11 +24,11 @@ export default function CartItem({ title, count, discountedPrice, price, id, ima
           <p className="price">{calcSubTotal(discountedPrice, count)} USD</p>
           <div className="quantity">
             QTY:{" "}
-            <button onClick={() => subtractOne(id)}>
+            <button onClick={() => subtractCounter(id)}>
               <span className="material-symbols-rounded">Remove</span>
             </button>{" "}
             {count}
-            <button onClick={() => addOne(id)}>
+            <button onClick={() => addCounter(id)}>
               <span className="material-symbols-rounded">Add</span>
             </button>
           </div>

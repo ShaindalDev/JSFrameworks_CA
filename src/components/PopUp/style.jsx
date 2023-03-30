@@ -8,41 +8,39 @@ display: ${(props) => (props.isVisible ? "block" : "none")};
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 100;
+
+
   .modal-box {
     position: absolute;
     width: 500px;
-    height: 10rem;
-    top: 50%;
+    height: 8rem;
+    top: 5%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    border: ${({ theme }) =>
-      `${theme.border.thickness} ${theme.border.type} ${theme.color.highlight}`};
-    background-color: ${({ theme }) => theme.color.support};
-    padding: 0.5rem 1rem;
+    transform: translate( -50%, -50%);
+    border-radius: 12px;
+    background-color: ${({ theme }) => theme.color.productCardBg};
+    padding: 1rem;
+    
   }
-  .close-button-container {
+  .closeButton {
     text-align: right;
     button {
+      padding: 0.2rem;
       border: none;
       background-color: ${({ theme }) => theme.color.neutral};
-      color: ${({ theme }) => theme.color.highlight};
-      border-radius: 4px;
+      color: ${({ theme }) => theme.color.dropShadow};
+      border-radius: 6px;
       cursor: pointer;
       &:hover {
         opacity: 0.9;
-        background-color: ${({ theme }) => theme.color.highlight};
+        background-color: ${({ theme }) => theme.color.dropShadow};
         color: ${({ theme }) => theme.color.neutral};
       }
     }
   }
-  .buttons-container {
-    display: flex;
-    justify-content: space-between;
-    button {
-      padding: 0.5rem 10%;
-    }
+
   }
   @media (max-width: ${({ theme }) => theme.break.small}) {
     .modal-box {

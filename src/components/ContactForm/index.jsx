@@ -1,9 +1,10 @@
-import { StyledContactForm } from "./styles";
-import ContactCTAButton from "../ContactCTA";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { StyledContactForm } from "./styles";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import ContactCTAButton from "../ContactCTA";
+
 
 const schema = yup
   .object({
@@ -63,7 +64,7 @@ export default function ContactForm() {
     return (
     <StyledContactForm onSubmit={handleSubmit(handleSubmission)}>
       <fieldset align="center" >
-        <legend>All fields are required</legend>
+      <p className="required-text">*All fields are required</p>
         <label htmlFor="fullName">Full name</label>
         <input
           {...register("fullName", {
@@ -107,7 +108,6 @@ export default function ContactForm() {
           placeholder="Write your message here"
         ></textarea>
         <p className="error-message">{errors.body?.message}</p>
-
         <div className="button-container">
           <ContactCTAButton text={"Submit"} />
         </div>

@@ -3,19 +3,14 @@ import styled from "styled-components";
 export const StyledContactForm = styled.form`
   width: 600px;
   border-radius: 12px;
-
   fieldset {
-    border-radius: 15px;
-    margin-bottom: 1.5rem;
     border: ${({ theme }) =>
       `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    
   }
-
-  legend {
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+}
 
   input,
   textarea {
@@ -42,9 +37,15 @@ export const StyledContactForm = styled.form`
     color: red;
   }
 
+  .required-text {
+    font-size: 14px;
+    color: ${({ theme }) => theme.color.secondButtonBG};
+    margin: 2.5rem 0;
+
+  }
   .button-container {
-    width: 100%;
-    margin-top: 2rem;
+    width: 50%;
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
     button {
       width: 100%;

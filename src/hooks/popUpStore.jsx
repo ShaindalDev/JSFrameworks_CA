@@ -13,7 +13,7 @@ export const usePopUpStore = create((set) => ({
     body.style.overflow = "hidden";
   },
 
-  hide: () => {
+  close: () => {
     set(() => ({ isVisible: false }));
     const body = document.body;
     body.style.overflow = "auto";

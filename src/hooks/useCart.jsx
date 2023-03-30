@@ -1,30 +1,3 @@
-// import { create } from 'zustand'
-
-// const useCartStore = create((set) => ({
-//     products: [],
-//     addToCart: () => set((state) => ({ products: [...state.products, 'Products']})),
-//     clearCart: () => set({ Products: [] }),
-//     addAllProducts: (productsList) => set({ products: productsList})
-// }))
-
-// function useCart() {
-//     const addToCart = useCartStore((state) => state.addToCart);
-//     function addToCart(id) {
-//         console.log('Add to cart');
-//     }
-
-//     function clearCart() {
-//         console.log('Clear cart');
-//     }
-
-//     function setProduct() {
-//         //
-//     }
-//     return { addToCart, clearCart, setProduct };
-// }
-
-// export { useCart };
-
 import { create } from "zustand";
 import { API_URL } from "../utils/constants";
 import { persist, createJSONStorage } from "zustand/middleware";
@@ -41,11 +14,11 @@ export const useProductsStore = create(
           const response = await fetch(API_URL);
           const products = await response.json();
 
-          // Get stored products from localStorage
+         
           let storedProducts = JSON.parse(localStorage.getItem("cart")) || [];
           storedProducts = storedProducts.state.availableProducts;
 
-          // Merge stored products with products from API response
+          
           const mergedProducts = products.map((item) => {
             const storedItem = storedProducts.find(
               (storedItem) => storedItem.id === item.id
@@ -54,7 +27,7 @@ export const useProductsStore = create(
             return { ...item, count };
           });
 
-          // Set availableProducts state
+          
           set({
             availableProducts: mergedProducts,
           });
@@ -64,13 +37,13 @@ export const useProductsStore = create(
           set({ isLoading: false });
         }
       },
-      addOne: (productId) =>
+      addCounter: (productId) =>
         set((state) => ({
           availableProducts: state.availableProducts.map((item) =>
             item.id === productId ? { ...item, count: item.count + 1 } : item
           ),
         })),
-      subtractOne: (productId) =>
+      subtractCounter: (productId) =>
         set((state) => ({
           availableProducts: state.availableProducts.map((item) =>
             item.id === productId

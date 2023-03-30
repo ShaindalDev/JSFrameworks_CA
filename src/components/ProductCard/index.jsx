@@ -18,14 +18,14 @@ export default function ProductCard({
   const { pathname } = useLocation();
   const { id: productId } = useParams();
 
-  const { addOne } = useProductsStore(
+  const { addCounter } = useProductsStore(
     (state) => ({
-      addOne: state.addOne,
+      addCounter: state.addCounter,
     }),
     shallow
   );
 
-  //PopUp modal
+  //PopUp
   const { isVisible, show } = usePopUpStore(
     (state) => ({
       isVisible: state.isVisible,
@@ -35,14 +35,14 @@ export default function ProductCard({
   );
 
   function handleClick(productId) {
-    addOne(productId);
+    addCounter(productId);
     show();
   }
 
   return (
     <StyledProdCard location={pathname}>
       <PopDialog
-        text={"Your item has been added to the cart"}
+        message={"Your item has been added to the cart"}
         isVisible={isVisible}
       />
       <img src={imageUrl} alt={description} />
