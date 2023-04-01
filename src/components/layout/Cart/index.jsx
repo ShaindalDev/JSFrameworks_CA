@@ -23,7 +23,7 @@ export default function Cart() {
   }
   return (
     <div className="cart-container">
-      <Link to="/src/pages/Cart" className="cart-wrapper">
+      <Link to="/cart" className="cart-wrapper">
         <span className="material-symbols-rounded">shopping_cart</span>
         <span>{showTotal()}</span>
       </Link>

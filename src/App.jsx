@@ -18,6 +18,7 @@ import Feedback from "./components/Feedback";
 import Loader from "./components/Loader";
 
 
+
 function App() {
   const { availableProducts, fetchProducts, isLoading, error } =
     useProductsStore(
@@ -45,15 +46,14 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-        <Route path="Cart" element={<Cart />} />
-        
-        <Route path="Electronics" element={<Electronics />} />
-        <Route path="Cosmetics" element={<Cosmetics />} />
-        <Route path="Perfumes" element={<Perfumes />} />
-        <Route path="Fashion" element={<Fashion />} />
-        <Route path="Product/:id" element={<Product />} />
-        <Route path="Contact" element={<Contact />} />
-        <Route path="SearchResults" element={<SearchResults />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="electronics" element={<Electronics />} />
+        <Route path="cosmetics" element={<Cosmetics />} />
+        <Route path="perfumes" element={<Perfumes />} />
+        <Route path="fashion" element={<Fashion />} />
+        <Route path="product/:id" element={<Product />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="searchResults" element={<SearchResults />} />
         <Route path="success" element={<OrderSuccessFull />} />
         <Route path="*" element={<NotFound />} />
       </Route>
