@@ -20,7 +20,6 @@ export default function Product() {
         const response = await fetch(API_URL + id);
         const data = await response.json();
 
-        //set document title including product name
         document.title = `Johnsen eCommerce | ${data.title}`;
 
         setData(data);

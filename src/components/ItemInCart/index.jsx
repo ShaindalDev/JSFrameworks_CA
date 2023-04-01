@@ -1,15 +1,14 @@
 import { useProductsStore } from "../../hooks/useCart";
-import { shallow } from "zustand/shallow";
 import { StyledItemsInCart } from "./styles";
 
-export default function CartItem({ title, count, discountedPrice, price, id, imageUrl }) {
+export default function CartItem({ title, id, discountedPrice, price, imageUrl, count }) {
   const { addCounter, subtractCounter, clearCount } = useProductsStore(
     (state) => ({
       addCounter: state.addCounter,
       subtractCounter: state.subtractCounter,
       clearCount: state.clearCount,
     }),
-    shallow
+    
   );
   function calcSubTotal(discountedPrice, count) {
     return (discountedPrice * count).toFixed(2);

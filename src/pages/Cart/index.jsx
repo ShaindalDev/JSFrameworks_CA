@@ -1,17 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useProductsStore } from "../../hooks/useCart";
 import { shallow } from "zustand/shallow";
-import { StyleCartPage } from "./styles";
 import CartItem from "../../components/ItemInCart";
-import PopDialog from "../../components/PopUp";
 import Feedback from "../../components/Feedback";
 import CheckoutSum from "../../components/CheckoutSum";
+import { StyleCartPage } from "./styles";
 
 export default function Cart() {
-  useEffect(() => {
-    document.title = "Johnsen eCommerce | Shopping Cart";
-  }, []);
-
   const { availableProducts, clearCart } = useProductsStore(
     (state) => ({
       availableProducts: state.availableProducts,
@@ -51,7 +46,6 @@ export default function Cart() {
 
   return (
     <StyleCartPage>
-      <PopDialog text={"Are you sure you want to remove this item?"} />
       {cartItems.length > 0 ? (
         <>
       <h1>Shopping cart</h1>
@@ -82,10 +76,3 @@ export default function Cart() {
     </StyleCartPage>
   )
 }
-
-/*
-TO DO:
-Fix clear cart when place order is clicked
-change background color of summary and list of items in the cart so that it's not same color as body
-check to see if box-shadow can be nice to have 
-fix color on +/- and trashcan button, it's to dark*/

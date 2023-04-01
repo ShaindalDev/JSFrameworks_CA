@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { StyledPage } from "../pageStyles";
 import ProductCard from "../../components/ProductCard";
 import { API_URL } from "../../utils/constants";
+import { StyledPage } from "../pageStyles";
 
 export default function Cosmetics() {
   const [products, setProducts] = useState([]);

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
   border-top: ${({ theme }) =>
-    `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+    `${theme.border.thickness} ${theme.border.type} ${theme.color.lightGrey}`};
   grid-column: -1/1;
   font-size: 1.1rem;
   
