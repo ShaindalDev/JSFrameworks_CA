@@ -1,18 +1,24 @@
-import { StyledProductReviews } from "./styles";
+import { ProductReviewStyled } from "./styles";
+import { RatingIcon } from "./styles";
+import { Star } from "@styled-icons/fa-solid/Star";
+import { StarEmpty } from "@styled-icons/icomoon/StarEmpty";
 
 export default function ProductReviews({ rating, reviews }) {
-  let stars = [];
-  for (let i = 0; i < rating; i++) {
-    stars.push(
-      <span key={i} className="material-symbols-rounded">
-        star
-      </span>
-    );
+  const filled = parseInt(Math.round(rating));
+  const empty = 5 - filled;
+
+  const stars = [];
+
+  for (let i = 0; i < filled; i++) {
+    stars.push(<RatingIcon src={Star} key={`filled-${i}`}/>);
+  }
+  for (let i=0; i < empty; i++) {
+    stars.push(<RatingIcon src={StarEmpty} key={`empty-${i}`}/>);
   }
 
   const userReviews = reviews.map((review) => {
     return (
-      <div key={review.id} className="reviews-container">
+      <div key={review.id} className="reviewsContainer">
         <h4>{review.username}</h4>
         <span>{stars}</span>
         <p>{review.description}</p>
@@ -21,17 +27,18 @@ export default function ProductReviews({ rating, reviews }) {
   });
 
   return (
-    <StyledProductReviews>
-      <div className="rating-container">
-        <h3>Rating</h3>
-        {stars}
-      </div>
+    <ProductReviewStyled>
       <h3>Reviews</h3>
       {userReviews.length > 0 ? (
         userReviews
       ) : (
-        <p className="reviews-container">This item has no reviews</p>
+        <p className="reviewsContainer">This item has no reviews</p>
       )}
-    </StyledProductReviews>
+      <div className="rating-container">
+        <h3>Rating</h3>
+        {stars}
+      </div>
+  
+    </ProductReviewStyled>
   );
 }

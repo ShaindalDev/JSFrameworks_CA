@@ -6,7 +6,7 @@ const smooth = {
     bgColorBody: '#425782',
     darkBgBody: "#323030e0",
     highlight: "#c8d6e5",
-    support: "#8395a7",
+    lightGrey: "#8395a7",
     neutral: "#fff",
     buttonText: "#030404",
     buttonBackground: "#d8d8d8",

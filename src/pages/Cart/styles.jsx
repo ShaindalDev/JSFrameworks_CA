@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const StyleCartPage = styled.main`
   display: flex;
-  margin: 4rem 0;
-  padding: 0 1rem;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  margin: 4rem 0;
+  padding: 0 1rem;
+
 
   h1 {
     flex: 100%;

@@ -10,14 +10,14 @@ export const StyledSearchBar = styled.div`
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: ${({ theme }) => theme.color.highlight};
+    color: ${({ theme }) => theme.color.neutral};
   }
 
   ul {
     list-style-type: none;
     position: absolute;
     top: 100%;
-    background-color: ${({ theme }) => theme.color.support};
+    background-color: ${({ theme }) => theme.color.productCardBg};
     width: 100%;
   }
 
@@ -28,7 +28,7 @@ export const StyledSearchBar = styled.div`
       padding: 0.5rem 1rem;
       display: block;
       text-decoration: none;
-      color: ${({ theme }) => theme.color.highlight};
+      color: ${({ theme }) => theme.color.neutral};
 
       &:hover {
         background-color: ${({ theme }) => theme.color.highlight};
@@ -53,6 +53,6 @@ export const StyledSearchBar = styled.div`
     grid-column-end: 6;
     border-right: none;
     border-top: ${({ theme }) =>
-      `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+      `${theme.border.thickness} ${theme.border.type} ${theme.color.lightGrey}`};
   }
 `;

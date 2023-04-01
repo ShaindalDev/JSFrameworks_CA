@@ -1,7 +1,7 @@
 import { PopUpStyle } from "./style";
 import { usePopUpStore } from "../../hooks/popUpStore";
 
-export default function PopDialog({ message }) {
+export default function PopUp({ message }) {
   const { isVisible, close } = usePopUpStore(
     (state) => ({
       isVisible: state.isVisible,

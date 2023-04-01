@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const StyledItemsInCart = styled.div`
   display: flex;
   max-width: 45rem;
-  border-radius: 6px;
-  justify-content: space-between;
-  border: ${({ theme }) =>
-    `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
   padding: 1.5rem;
   margin: 1rem 0;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: ${({ theme }) =>
+    `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
 
   .item-info {
     display: flex;
@@ -17,7 +17,7 @@ export const StyledItemsInCart = styled.div`
   }
 
   img {
-    width: 7.5rem;
+    width: 7rem;
   }
 
   h2 {
@@ -32,21 +32,19 @@ export const StyledItemsInCart = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
   }
 
   button {
     display: flex;
-    border: none;
-    background-color: ${({ theme }) => theme.color.support};
-    color: ${({ theme }) => theme.color.buttonText};
-    border-radius: 6px;
     cursor: pointer;
+    border-radius: 6px;
+    background-color: ${({ theme }) => theme.color.neutral};
 
     &:hover {
-      opacity: 1;
+      opacity: 0.7;
+      color: ${({ theme }) => theme.color.lightGrey};
       background-color: ${({ theme }) => theme.color.highlight};
-      color: ${({ theme }) => theme.color.support};
     }
   }
 `;

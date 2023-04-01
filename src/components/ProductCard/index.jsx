@@ -1,7 +1,7 @@
 import { StyledProdCard } from "./styles";
 import { Link, useLocation, useParams } from "react-router-dom";
 import PrimaryButton from "../PrimaryButton";
-import PopDialog from "../PopUp";
+import PopUp from "../PopUp";
 import { useProductsStore } from "../../hooks/useCart";
 import { usePopUpStore } from "../../hooks/popUpStore";
 import { shallow } from "zustand/shallow";
@@ -41,7 +41,7 @@ export default function ProductCard({
 
   return (
     <StyledProdCard location={pathname}>
-      <PopDialog
+      <PopUp
         message={"Your item has been added to the cart"}
         isVisible={isVisible}
       />

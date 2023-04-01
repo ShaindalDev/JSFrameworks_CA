@@ -16,23 +16,23 @@ display: ${(props) => (props.isVisible ? "block" : "none")};
     position: absolute;
     width: 500px;
     height: 8rem;
+    border-radius: 12px;
+    padding: 1rem;
     top: 5%;
     left: 50%;
     transform: translate( -50%, -50%);
-    border-radius: 12px;
     background-color: ${({ theme }) => theme.color.productCardBg};
-    padding: 1rem;
     
   }
   .closeButton {
     text-align: right;
     button {
       padding: 0.2rem;
+      cursor: pointer;
       border: none;
       background-color: ${({ theme }) => theme.color.neutral};
       color: ${({ theme }) => theme.color.dropShadow};
       border-radius: 6px;
-      cursor: pointer;
       &:hover {
         opacity: 0.9;
         background-color: ${({ theme }) => theme.color.dropShadow};

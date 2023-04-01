@@ -6,7 +6,7 @@ export const usePopUpStore = create((set) => ({
   show: (productId) => {
     set(() => ({ isVisible: true, productId }));
     const body = document.body;
-    //user can view modal is browsing from small screens
+    
     window.scrollTo({
       top: 0,
     });

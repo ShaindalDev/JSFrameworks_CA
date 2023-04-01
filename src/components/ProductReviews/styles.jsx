@@ -1,30 +1,22 @@
 import styled from "styled-components";
 
-export const StyledProductReviews = styled.div`
+export const ProductReviewStyled = styled.div`
   max-width: 25rem;
   margin-top: 1.5rem;
-  
-    
+  border-top: ${({ theme }) =>
+  `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
 
   h3 {
-    margin: 1rem;
+    margin: 0.9rem;
+
   }
 
-  .rating-container {
-    display: flex;
-    align-items: baseline;
-    border-bottom: ${({ theme }) =>
-      `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
-      
-  }
-
-  .reviews-container {
-    margin: 1rem;
+  .reviewsContainer {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
-    border-bottom: ${({ theme }) => `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
-
+    margin: 1.5rem;
+    
     h4 {
       margin-right: 1rem;
       margin-bottom: 0.5rem;
@@ -32,8 +24,15 @@ export const StyledProductReviews = styled.div`
 
     p {
       margin-top: 0;
+      
       flex: 100%;
     }
+  }
+  .rating-container {
+    display: flex;
+    align-items: baseline;
+    border-bottom: ${({ theme }) =>
+      `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
   }
 
   @media (max-width: ${({ theme }) => theme.break.small}) {
@@ -46,4 +45,8 @@ export const StyledProductReviews = styled.div`
       font-weight: lighter;
     }
   }
-`;
+`
+export const RatingIcon = styled.img`
+width: 1.5rem;
+margin-bottom: -4px;`
+;
