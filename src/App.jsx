@@ -44,17 +44,18 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/src/pages/Cart" element={<Cart />} />
-        <Route index element={<Home />} />
-        <Route path="/src/pages/Electronics" element={<Electronics />} />
-        <Route path="/src/pages/Cosmetics" element={<Cosmetics />} />
-        <Route path="/src/pages/Perfumes" element={<Perfumes />} />
-        <Route path="/src/pages/Fashion" element={<Fashion />} />
-        <Route path="/src/pages/Product/:id" element={<Product />} />
-        <Route path="/src/pages/Contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/src/pages/SearchResults" element={<SearchResults />} />
+      <Route index element={<Home />} />
+        <Route path="Cart" element={<Cart />} />
+        
+        <Route path="Electronics" element={<Electronics />} />
+        <Route path="Cosmetics" element={<Cosmetics />} />
+        <Route path="Perfumes" element={<Perfumes />} />
+        <Route path="Fashion" element={<Fashion />} />
+        <Route path="Product/:id" element={<Product />} />
+        <Route path="Contact" element={<Contact />} />
+        <Route path="SearchResults" element={<SearchResults />} />
         <Route path="success" element={<OrderSuccessFull />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
