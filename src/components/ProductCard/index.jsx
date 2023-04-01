@@ -1,6 +1,10 @@
-import { StyledProductCard } from "./styles";
-import PrimaryButton from "../PrimaryButton";
+import { StyledProdCard } from "./styles";
 import { Link, useLocation, useParams } from "react-router-dom";
+import PrimaryButton from "../PrimaryButton";
+import PopDialog from "../PopUp";
+import { useProductsStore } from "../../hooks/useCart";
+import { usePopUpStore } from "../../hooks/popUpStore";
+import { shallow } from "zustand/shallow";
 
 export default function ProductCard({
   id,
@@ -14,8 +18,33 @@ export default function ProductCard({
   const { pathname } = useLocation();
   const { id: productId } = useParams();
 
+  const { addCounter } = useProductsStore(
+    (state) => ({
+      addCounter: state.addCounter,
+    }),
+    shallow
+  );
+
+  //PopUp
+  const { isVisible, show } = usePopUpStore(
+    (state) => ({
+      isVisible: state.isVisible,
+      show: state.show,
+    }),
+    shallow
+  );
+
+  function handleClick(productId) {
+    addCounter(productId);
+    show();
+  }
+
   return (
-    <StyledProductCard location={pathname}>
+    <StyledProdCard location={pathname}>
+      <PopDialog
+        message={"Your item has been added to the cart"}
+        isVisible={isVisible}
+      />
       <img src={imageUrl} alt={description} />
       <div className="items-data">
         <h2>{title}</h2>
@@ -35,13 +64,12 @@ export default function ProductCard({
           </p>
         </div>
         <p>{discountedPrice} USD</p>
-
         {pathname === `/src/pages/Product/${productId}` ? (
-          <PrimaryButton text={"Add to cart"} />
+          <PrimaryButton onClick={() => handleClick(productId)} text={"Add to cart"} />
         ) : (
           <Link to={`/src/pages/Product/${id}`}>View product</Link>
         )}
       </div>
-    </StyledProductCard>
+    </StyledProdCard>
   );
 }

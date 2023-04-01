@@ -11,7 +11,22 @@ const smooth = {
     buttonText: "#030404",
     buttonBackground: "#d8d8d8",
     productCardBg: "#43474c",
-
+    discountBgColor: "#B10000",
+    dividerColorRight: "linear-gradient(to right, rgba(226,227,228,1), rgba(172,182,200,1))",
+    dividerColorLeft: "linear-gradient(to left, rgba(226,227,228,1), rgba(172,182,200,1))",
+    //Button color and gradients
+    contactCTA: "linear-gradient(to top, rgba(0,102,2,1), rgba(102,240,10,1))",
+    primaryCTA: "green",
+    secondButtonBG: "red",
+    dropShadow: "#000",
+    gradientActive2: "rgba(37,117,252,0.5)",
+    gradientHover: "linear-gradient(to left, rgba(48,207,208,0.4), rgba(51,8,103,0.4))",
+    //Body, Header and Footer background gradient
+    bodyGradient: "linear-gradient(to left, rgba(106,133,182,1), rgba(186,200,224,1))",
+    headerGradient: "linear-gradient(to right, rgba(106,133,182,0.5), rgba(186,200,224,0.7))",
+    // Product rating and review styling
+    borderGradientFade: "linear-gradient(to right, rgba(102,126,234,0.85), rgba(118,75,162,0.85))", //can't get it to work as i want, future issue
+    
 
   },
   break: {
@@ -20,6 +35,8 @@ const smooth = {
   },
   border: {
     thickness: "1px",
+    thicknessDivider: "3px",
+    thicknessThick: "5px",
     type: "solid",
     borderRadius: 3,
   },

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const StyledProductReviews = styled.div`
-  width: 80%;
-  border: ${({ theme }) =>
-    `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+  max-width: 25rem;
+  margin-top: 1.5rem;
+  
+    
 
   h3 {
     margin: 1rem;
@@ -13,7 +14,8 @@ export const StyledProductReviews = styled.div`
     display: flex;
     align-items: baseline;
     border-bottom: ${({ theme }) =>
-      `${theme.border.thickness} ${theme.border.type} ${theme.color.support}`};
+      `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
+      
   }
 
   .reviews-container {
@@ -21,6 +23,7 @@ export const StyledProductReviews = styled.div`
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
+    border-bottom: ${({ theme }) => `${theme.border.thickness} ${theme.border.type} ${theme.color.dropShadow}`};
 
     h4 {
       margin-right: 1rem;

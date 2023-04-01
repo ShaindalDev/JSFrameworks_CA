@@ -7,6 +7,7 @@ export const StyledPage = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  
 
   h1 {
     flex: 100%;

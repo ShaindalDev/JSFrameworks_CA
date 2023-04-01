@@ -1,9 +1,10 @@
-import { StyledContactForm } from "./styles";
-import PrimaryButton from "../PrimaryButton";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { StyledContactForm } from "./styles";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import ContactCTAButton from "../ContactCTA";
+
 
 const schema = yup
   .object({
@@ -33,21 +34,37 @@ export default function ContactForm() {
   useEffect(() => {
     document.title = "Johnsen eCommerce | Contact us";
   }, []);
-
+  const [success, setSuccess] = useState(false);
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitSuccessful },
   } = useForm({ resolver: yupResolver(schema) });
 
   function handleSubmission(data) {
     console.log(data);
+    setSuccess(true);
   }
+    useEffect(() => {
+      if (isSubmitSuccessful) {
+        reset();
 
-  return (
+      }
+    }, [isSubmitSuccessful, reset]);
+
+    if (success) {
+      return (
+        <StyledContactForm onSubmit={handleSubmit(handleSubmission)}>
+          <h2 align="center">Feedback submitted successfully</h2>
+          <p align="center">Thank you for contacting us. Your message has been received and will be responded to as soon as possible. Have a nice day!</p>
+        </StyledContactForm>
+      );
+    }
+    return (
     <StyledContactForm onSubmit={handleSubmit(handleSubmission)}>
       <fieldset align="center" >
-        <legend>All fields are required</legend>
+      <p className="required-text">*All fields are required</p>
         <label htmlFor="fullName">Full name</label>
         <input
           {...register("fullName", {
@@ -91,11 +108,13 @@ export default function ContactForm() {
           placeholder="Write your message here"
         ></textarea>
         <p className="error-message">{errors.body?.message}</p>
-
         <div className="button-container">
-          <PrimaryButton text={"Submit"} />
+          <ContactCTAButton text={"Submit"} />
         </div>
       </fieldset>
     </StyledContactForm>
   );
 }
+
+
+  

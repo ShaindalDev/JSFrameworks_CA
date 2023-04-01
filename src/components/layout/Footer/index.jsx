@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <StyledFooter>
-      <h4>&copy; <Link to="https://www.johnsen-codes.no">Johnsen-codes.no</Link></h4>
+      <h3>&copy; <Link to="https://www.johnsen-codes.no">Johnsen-codes.no</Link></h3>
       <ul>
         <li>
           <Link to="https://github.com/ShaindalDev">GitHub</Link>
