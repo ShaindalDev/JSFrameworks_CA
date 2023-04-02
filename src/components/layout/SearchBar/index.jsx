@@ -26,8 +26,6 @@ export default function SearchBar() {
 
     fetchData();
     
-
-    //remove options from searchbar
     setSuggestions([]);
     setUserInput("");
   }, [pathname]);
@@ -36,7 +34,7 @@ export default function SearchBar() {
     const query = event.target.value.toLowerCase();
     setUserInput(query);
 
-    //delay suggestions to display more accurate results
+    
     if (query.length > 2) {
       const filteredSuggestions = data.filter((product) =>
         product.title.toLowerCase().includes(query)
@@ -75,8 +73,8 @@ export default function SearchBar() {
   function goToPage() {
     const chosenSuggestion = suggestions[selected];
     chosenSuggestion
-      ? window.location.replace(`/src/pages/Product/${chosenSuggestion.id}`)
-      : window.location.replace("/src/pages/SearchResults");
+      ? window.location.replace(`/Product/${chosenSuggestion.id}`)
+      : window.location.replace("/SearchResults");
   }
 
   function navigateSuggestions(direction, target) {
@@ -119,7 +117,7 @@ export default function SearchBar() {
         {suggestions.map((item) => {
           return (
             <li key={item.id} id={item.id}>
-              <Link to={`/src/pages/Product/${item.id}`}>{item.title}</Link>
+              <Link to={`/Product/${item.id}`}>{item.title}</Link>
             </li>
           );
         })}
@@ -127,3 +125,54 @@ export default function SearchBar() {
     </StyledSearchBar>
   );
 }
+
+//Testing different approach to make search more user friendly. So the code below is commented out for the moment
+// import { useStore } from "zustand";
+// import { NoResultFound, StyledSearchBar } from "./styles";
+// import SearchItem from "../../SearchItem";
+// export const search = function (data, query) {
+//   return data.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()));
+// };
+
+// export default function Search() {
+//   const { isLoading, IsError, data } = useStore((state) => state.products);
+//   const [query, setQuery] = useState("");
+
+//   let result = search(data, query);
+//   if (query.trim() === "" || query.length < 2) {
+//     result = [];
+//   }
+
+//   function onInputQuery(event) {
+//     setQuery(event.currentTarget.value);
+//   }
+
+//   return (
+//     <StyledSearchBar>
+//       <div className="input-wrapper">
+//         <label htmlFor="search-bar"></label>
+//       <span className="material-symbols-rounded">search</span>
+//         <input
+//           id="search"
+//           type="search"
+//           placeholder="Search"
+//           autoComplete="off"
+//           disabled={isLoading && IsError} onChange={onInputQuery} value={query}
+//         />
+//       </div>
+//         {result.length > 0 ? (
+//          <ul>
+//           {" "}
+//           {result.map((item) => (
+//             <SearchItem key={item.id} item={item} />
+//           ))} 
+//           </ul>
+//         ) : query.length > 1 && query.trim() !== "" ? (
+//           <NoResultFound>No matching result for "{query}"</NoResultFound>
+//         ) : (
+//           ""
+//         )}
+      
+//     </StyledSearchBar>
+//   )
+// }
