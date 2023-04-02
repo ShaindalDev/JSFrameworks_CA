@@ -67,7 +67,7 @@ export default function ProductCard({
         {pathname === `/Product/${productId}` ? (
           <PrimaryButton onClick={() => handleClick(productId)} text={"Add to cart"} />
         ) : (
-          <Link to={`/pages/Product/${id}`}>View product</Link>
+          <Link to={`/Product/${id}`}>View product</Link>
         )}
       </div>
     </StyledProdCard>

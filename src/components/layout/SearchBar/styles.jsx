@@ -55,4 +55,7 @@ export const StyledSearchBar = styled.div`
     border-top: ${({ theme }) =>
       `${theme.border.thickness} ${theme.border.type} ${theme.color.lightGrey}`};
   }
+`
+export const NoResultFound = styled.p`
+padding: 2 rem 0 0 1rem;
 `;

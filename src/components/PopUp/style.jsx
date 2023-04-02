@@ -17,6 +17,7 @@ display: ${(props) => (props.isVisible ? "block" : "none")};
     width: 500px;
     height: 8rem;
     border-radius: 12px;
+    margin-top: 1.5rem;
     padding: 1rem;
     top: 5%;
     left: 50%;
@@ -45,6 +46,7 @@ display: ${(props) => (props.isVisible ? "block" : "none")};
   @media (max-width: ${({ theme }) => theme.break.small}) {
     .modal-box {
       width: 100%;
-      height: 11rem;
+      margin-top: 2rem;
+      height: 10rem;
     }
   }`;
