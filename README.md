@@ -1,4 +1,8 @@
 # JSFrameworks_CA
 A javascript Frameworks course at Noroff
 
-just to get a commit in dev branch
+Run to install dependencies
+``` npm i ```
+
+To run the development web server run
+``` npm run start```
