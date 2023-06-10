@@ -2,17 +2,12 @@
 
 ![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
 
-A simple overview of the use/purpose of the project.
+Demo of the site : https://aquamarine-kheer-44b3ab.netlify.app/
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
-
-You can add some bullet points if you'd like to:
-
-- List item 1
-- List item 2
-- List item 3
+Welcome to Johnsen eCommerce. Here you can buy and sell all different items you need or don't need. This is a project at Noroff, Front-end course. 
+This is built with React and yup for the validation of input fields, zustand is used for state management.
 
 ## Built With
 
@@ -20,6 +15,8 @@ You can list a the tech stack that you've used over here
 
 - [React.js](https://reactjs.org/)
 - [Styled-Components](https://styled-components.com/)
+- [yup](https://www.npmjs.com/package/yup)
+- [zustand](https://github.com/pmndrs/zustand)
 
 ## Getting Started
 
@@ -61,10 +58,4 @@ This is where you can leave your social links for people to contact you, such as
 
 [My LinkedIn page](https://www.linkedin.com/in/robin-johnsen-04a226159/)
 
-## License
 
-You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
-
-## Acknowledgments
-
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
