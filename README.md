@@ -1,6 +1,6 @@
 # Your project title
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](https://github.com/ShaindalDev/JSFrameworks_CA/blob/1d0d45845240e1c196967219765b7f034e2d1c4c/src/assets/johnsen_ecommerce.png)
 
 Demo of the site : https://aquamarine-kheer-44b3ab.netlify.app/
 
